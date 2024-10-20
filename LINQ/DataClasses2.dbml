@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CountriesV2" Class="DataClasses2DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=CountriesV2;Integrated Security=True;Encrypt=False;Trust Server Certificate=True" SettingsObjectName="LINQ.Properties.Settings" SettingsPropertyName="CountriesV2ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.BigSities" Member="BigSities">
+    <Type Name="BigSities">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CountOfPersons" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="CountryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="BigSities_CapitalsOfCountries" Member="CapitalsOfCountries" ThisKey="ID" OtherKey="SityId" Type="CapitalsOfCountries" />
+      <Association Name="Country_BigSities" Member="Country" ThisKey="CountryId" OtherKey="ID" Type="Country" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PartsOfTheWorld" Member="PartsOfTheWorld">
+    <Type Name="PartsOfTheWorld">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Association Name="PartsOfTheWorld_Country" Member="Country" ThisKey="ID" OtherKey="PartOfTheWorldId" Type="Country" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Country" Member="Country">
+    <Type Name="Country">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PartOfTheWorldId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalCountOfPersons" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SquareOfCountry" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Country_BigSities" Member="BigSities" ThisKey="ID" OtherKey="CountryId" Type="BigSities" />
+      <Association Name="Country_CapitalsOfCountries" Member="CapitalsOfCountries" ThisKey="ID" OtherKey="CountryId" Type="CapitalsOfCountries" />
+      <Association Name="PartsOfTheWorld_Country" Member="PartsOfTheWorld" ThisKey="PartOfTheWorldId" OtherKey="ID" Type="PartsOfTheWorld" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CapitalsOfCountries" Member="CapitalsOfCountries">
+    <Type Name="CapitalsOfCountries">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SityId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CountryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="BigSities_CapitalsOfCountries" Member="BigSities" ThisKey="SityId" OtherKey="ID" Type="BigSities" IsForeignKey="true" />
+      <Association Name="Country_CapitalsOfCountries" Member="Country" ThisKey="CountryId" OtherKey="ID" Type="Country" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

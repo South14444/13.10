@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.25, 8.5" name="DataClasses2">
+  <DataContextMoniker Name="/DataClasses2DataContext" />
+  <nestedChildShapes>
+    <classShape Id="62a330b3-9722-469a-b966-1c25cef47de6" absoluteBounds="6.25, 1, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataClasses2DataContext/BigSities" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3b1857e7-9572-4a82-8926-092213cf9b9c" absoluteBounds="6.265, 1.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="694c0895-abe1-415c-ad17-45bcb8ce2416" absoluteBounds="1, 1.125, 2, 1.1939925130208338">
+      <DataClassMoniker Name="/DataClasses2DataContext/PartsOfTheWorld" />
+      <nestedChildShapes>
+        <elementListCompartment Id="58ad6a88-1ab4-49a7-8f39-5692be4b44da" absoluteBounds="1.0150000000000001, 1.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dc3b44be-63cc-4828-9992-11e0cda98b5a" absoluteBounds="3.5, 0.875, 2, 1.7708968098958333">
+      <DataClassMoniker Name="/DataClasses2DataContext/Country" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7cc90a2f-83d9-4695-af49-3229045dd38a" absoluteBounds="3.515, 1.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f2b0b8a7-7772-427e-bad2-9530aaac4a15" absoluteBounds="9, 1.125, 2, 1.3862939453124998">
+      <DataClassMoniker Name="/DataClasses2DataContext/CapitalsOfCountries" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b1168031-7e62-4f08-a019-5e040cfca40c" absoluteBounds="9.015, 1.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 1.78929768880208); (6.25 : 1.78929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses2DataContext/Country/Country_BigSities" />
+      <nodes>
+        <classShapeMoniker Id="dc3b44be-63cc-4828-9992-11e0cda98b5a" />
+        <classShapeMoniker Id="62a330b3-9722-469a-b966-1c25cef47de6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3 : 1.72199625651042); (3.5 : 1.72199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses2DataContext/PartsOfTheWorld/PartsOfTheWorld_Country" />
+      <nodes>
+        <classShapeMoniker Id="694c0895-abe1-415c-ad17-45bcb8ce2416" />
+        <classShapeMoniker Id="dc3b44be-63cc-4828-9992-11e0cda98b5a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 1.81814697265625); (9 : 1.81814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses2DataContext/BigSities/BigSities_CapitalsOfCountries" />
+      <nodes>
+        <classShapeMoniker Id="62a330b3-9722-469a-b966-1c25cef47de6" />
+        <classShapeMoniker Id="f2b0b8a7-7772-427e-bad2-9530aaac4a15" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 2.64589680989583); (5.875 : 3.02089680989583); (5.875 : 2.8862939453125); (8.625 : 2.8862939453125); (9 : 2.5112939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClasses2DataContext/Country/Country_CapitalsOfCountries" />
+      <nodes>
+        <classShapeMoniker Id="dc3b44be-63cc-4828-9992-11e0cda98b5a" />
+        <classShapeMoniker Id="f2b0b8a7-7772-427e-bad2-9530aaac4a15" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
